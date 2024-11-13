@@ -10,6 +10,8 @@ services:
       - mga
     depends_on:
       - backend
+    volumes:
+      - ./mindmap-frontend/src:/frontend/src
   backend:
     container_name: backend
     build: ./mindmap-backend
@@ -17,6 +19,8 @@ services:
       - "8090:8090"
     networks:
       - mga
+    volumes:
+      - ./mindmap-backend:/backend
 
 networks:
   mga:
